@@ -24,6 +24,7 @@ extension SubscriptionsManager {
     func loadProducts() async {
         do {
             self.products = try await Product.products(for: productIDs)
+                .sorted(by: { $0.price > $1.price })
         } catch {
             print("Failed to fetch products!")
         }

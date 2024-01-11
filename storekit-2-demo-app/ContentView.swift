@@ -13,11 +13,13 @@ struct ContentView: View {
     @State private var selectedProduct: Product? = nil
     
     private var screenWidth: CGFloat = UIScreen.main.bounds.width
-    private let features: [String] = ["Remove all ads", "Daily new content", "Other cool features"]
+    private var screenHeight: CGFloat = UIScreen.main.bounds.height
+    private let features: [String] = ["Remove all ads", "Daily new content", "Other cool features", "Follow for more tutorials"]
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 25) {
+        VStack(alignment: .center, spacing: 12.5) {
+            Spacer()
             if !subscriptionsManager.products.isEmpty {
                 Image(systemName: "dollarsign.circle.fill")
                     .foregroundStyle(.tint)
@@ -34,10 +36,9 @@ struct ContentView: View {
                         .padding(.horizontal, 30)
                 })
                 
-                Spacer()
                 // Features
                 List(features, id: \.self) { feature in
-                    HStack {
+                    HStack(alignment: .center) {
                         Image(systemName: "checkmark.circle")
                             .font(.system(size: 22.5, weight: .medium))
                             .foregroundStyle(.blue)
@@ -47,71 +48,76 @@ struct ContentView: View {
                             .multilineTextAlignment(.leading)
                     }
                     .listRowSeparator(.hidden)
-                    .frame(height: 35, alignment: .center)
+                    .frame(height: 35)
                 }
                 .scrollDisabled(true)
                 .listStyle(.plain)
+                .padding(.vertical, 20)
                 
-                // Products
-                List(subscriptionsManager.products, id: \.self) { product in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 12.5)
-                            .stroke(selectedProduct == product ? .blue : .black, lineWidth: 1.0)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white)) // Optional: Add a white background
-                        
-                        HStack {
-                            VStack(alignment: .leading, spacing: 8.5) {
-                                Text(product.displayName)
-                                    .font(.system(size: 16.0, weight: .semibold, design: .rounded))
-                                    .multilineTextAlignment(.leading)
-                                
-                                Text("Get full access for just \(product.displayPrice)")
-                                    .font(.system(size: 14.0, weight: .regular, design: .rounded))
-                                    .multilineTextAlignment(.leading)
+                VStack(spacing: 0) {
+                    // Products
+                    List(subscriptionsManager.products, id: \.self) { product in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12.5)
+                                .stroke(selectedProduct == product ? .blue : .black, lineWidth: 1.0)
+                                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white)) // Optional: Add a white background
+                            
+                            HStack {
+                                VStack(alignment: .leading, spacing: 8.5) {
+                                    Text(product.displayName)
+                                        .font(.system(size: 16.0, weight: .semibold, design: .rounded))
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    Text("Get full access for just \(product.displayPrice)")
+                                        .font(.system(size: 14.0, weight: .regular, design: .rounded))
+                                        .multilineTextAlignment(.leading)
+                                }
+                                Spacer()
+                                Image(systemName: selectedProduct == product ? "checkmark.circle.fill" : "circle")
+                                    .foregroundColor(selectedProduct == product ? .blue : .gray)
                             }
-                            Spacer()
-                            Image(systemName: selectedProduct == product ? "checkmark.circle.fill" : "circle")
-                                .foregroundColor(selectedProduct == product ? .blue : .gray)
+                            .padding(.horizontal, 20)
+                            .frame(height: 65, alignment: .center)
                         }
-                        .padding(.horizontal, 20)
-                        .frame(height: 65, alignment: .center)
                         .onTapGesture {
                             selectedProduct = product
                         }
+                        .listRowSeparator(.hidden)
                     }
-                    .listRowSeparator(.hidden)
-                }
-                .scrollDisabled(true)
-                .listStyle(.plain)
-                .listRowSpacing(2.5)
-                
-                VStack(alignment: .center, spacing: 12.5, content: {
-                    Button(action: {
-                        if let selectedProduct = selectedProduct {
-                            print("Purchased \(selectedProduct.displayName) for \(selectedProduct.displayPrice)")
-                        } else {
-                            print("Please select a product before purchasing.")
-                        }
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 12.5)
-                            Text("Purchase")
-                                .foregroundStyle(.white)
-                                .font(.system(size: 16.5, weight: .semibold, design: .rounded))
-                        }
-                    })
-                    .padding(.horizontal, 20)
-                    .frame(height: 46)
-                    .disabled(selectedProduct == nil)
+                    .scrollDisabled(true)
+                    .listStyle(.plain)
+                    .listRowSpacing(2.5)
                     
-                    Button("Restore Purchases") {
+                    VStack(alignment: .center, spacing: 20, content: {
+                        Button(action: {
+                            if let selectedProduct = selectedProduct {
+                                print("Purchased \(selectedProduct.displayName) for \(selectedProduct.displayPrice)")
+                            } else {
+                                print("Please select a product before purchasing.")
+                            }
+                        }, label: {
+                            RoundedRectangle(cornerRadius: 12.5)
+                                .overlay {
+                                    Text("Purchase")
+                                        .foregroundStyle(.white)
+                                        .font(.system(size: 16.5, weight: .semibold, design: .rounded))
+                                }
+                        })
+                        .padding(.horizontal, 20)
+                        .frame(height: 46)
+                        .disabled(selectedProduct == nil)
                         
-                    }
-                    .font(.system(size: 14.0, weight: .regular, design: .rounded))
-                })
+                        Button("Restore Purchases") {
+                        }
+                        .font(.system(size: 14.0, weight: .regular, design: .rounded))
+                        .frame(height: 10, alignment: .center)
+                    })
+                    .frame(height: 76)
+                }
             }
         }
-        .padding()
+        .padding(.horizontal, 15)
+        .padding(.vertical, 10)
         .task {
             await subscriptionsManager.loadProducts()
         }
