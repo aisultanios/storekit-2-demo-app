@@ -5,7 +5,10 @@
 
 ### This repository is paired with the complete tutorial about how to implement Inn-App Subscriptions using Swift and StoreKit2 (Serverless).
 
-#### You can find the tutorial [here]()
+#### You can find the tutorial [HERE]()
+
+### Demo-app demonstration:
+![VideoDemoSubscriptionsPurchaseProductComplete-ezgif com-video-to-gif-converter](https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15)
 
 ### Here is a breakdown of what we will implement:
 
@@ -14,9 +17,6 @@
  - Unlock features for active subscriptions and lifetime purchases
  - Handle renewals, cancellations, and billing errors
  - Validate receipts
-
-### Demo-app demonstration:
-![VideoDemoSubscriptionsPurchaseProductComplete-ezgif com-video-to-gif-converter](https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15)
 
 # Disclaimer
 #### This sample app was designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
