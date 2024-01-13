@@ -7,6 +7,8 @@
 
 #### You can find the tutorial [here]()
 
+### Demo-app demonstration:
+
 ### Here is a little breakdown of what we will implement:
 
  - List products
@@ -16,4 +18,4 @@
  - Validate receipts
 
 # Disclaimer
-### This sample app ws designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
+#### This sample app ws designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
