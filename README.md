@@ -8,6 +8,7 @@
 #### You can find the tutorial [here]()
 
 ### Demo-app demonstration:
+![VideoDemoSubscriptionsPurchaseProductComplete-ezgif com-video-to-gif-converter](https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15)
 
 ### Here is a little breakdown of what we will implement:
 
