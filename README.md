@@ -18,4 +18,4 @@
  - Validate receipts
 
 # Disclaimer
-#### This sample app ws designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
+#### This sample app was designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
