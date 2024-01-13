@@ -1,5 +1,5 @@
 
-# Implementing On-Device Subscriptions with StoreKit 2 in Swift
+# Implement On-Device Subscriptions with StoreKit 2 in Swift
 
 ### This repository is paired with the complete tutorial about how to implement Inn-App Subscriptions using Swift and StoreKit2 (Serverless).
 
