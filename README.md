@@ -8,7 +8,9 @@
 #### You can find the tutorial [HERE](https://medium.com/@aisultan.askarov/implement-inn-app-subscriptions-using-swift-and-storekit2-serverless-and-share-active-purchases-7d50f9ecdc09)
 
 ### 🎥 - Video demonstrations of the app
-![VideoDemoSubscriptionsPurchaseProductComplete-ezgif com-video-to-gif-converter](https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15)
+<p align="center">
+<img src=https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15>
+</p>
 
 ### Here is a breakdown of what we will implement:
 
