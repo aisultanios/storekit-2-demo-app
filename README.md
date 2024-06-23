@@ -21,7 +21,7 @@
  - Handle renewals, cancellations, and billing errors
  - Validate receipts
 
-### 🎥 - Video demonstrations of the app
+## 🎥 - Video demonstrations of the app
 <p align="center">
 <img src=https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15>
 </p>
