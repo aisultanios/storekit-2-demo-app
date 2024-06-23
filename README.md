@@ -9,6 +9,7 @@
 
 ## 🛠️ Technologies:
 
+* `Swift`
 * `SwiftUI`
 * `StoreKit`
 
