@@ -7,18 +7,23 @@
 
 #### You can find the tutorial [HERE](https://medium.com/@aisultan.askarov/implement-inn-app-subscriptions-using-swift-and-storekit2-serverless-and-share-active-purchases-7d50f9ecdc09)
 
-### 🎥 - Video demonstrations of the app
-<p align="center">
-<img src=https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15>
-</p>
+## 🛠️ Technologies:
 
-### Here is a breakdown of what we will implement:
+* `SwiftUI`
+* `StoreKit`
+
+## 📋 Here is a breakdown of what we will implement:
 
  - List products
  - Purchase products
  - Unlock features for active subscriptions and lifetime purchases
  - Handle renewals, cancellations, and billing errors
  - Validate receipts
+
+### 🎥 - Video demonstrations of the app
+<p align="center">
+<img src=https://github.com/AisultanAskarov/storekit-2-demo-app/assets/36818367/df20cee2-a78b-49a6-b01e-2ede66031a15>
+</p>
 
 # Disclaimer
 #### This sample app was designed to follow the blog post and provide as much succinctness and readability as possible. There will be different (and maybe better) ways to implement these steps for your own app.
